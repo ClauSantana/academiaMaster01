@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:decorate template="/index.xhtml">
+
+	<ui:define name="centro">
+
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:fieldset legend="Cadastrar Treino" style="margin-bottom:20px">
+
+				<p:panelGrid columns="2">
+				
+					<p:outputLabel for="console" value="Dia da semana:" />
+					<p:selectOneMenu id="console" value="#{treinoMbean.treino.diasemana}"
+						style="width:125px">
+						<f:selectItem itemLabel="Segunda" itemValue="Segunda" />
+						<f:selectItem itemLabel="Terça" itemValue="Terça" />
+						<f:selectItem itemLabel="Quarta" itemValue="Quarta" />
+						<f:selectItem itemLabel="Quinta" itemValue="Quinta" />
+						<f:selectItem itemLabel="Sexta" itemValue="Sexta" />
+						<f:selectItem itemLabel="Sábado" itemValue="Sábado" />
+					</p:selectOneMenu>
+					
+					<p:outputLabel value="Séries:"></p:outputLabel>
+					<p:inputText value="#{treinoMbean.treino.series}"/>
+					
+					<p:outputLabel value="Número de Repetições:"></p:outputLabel>
+					<p:inputText value="#{treinoMbean.treino.repeticoes}"/>
+						
+				</p:panelGrid>
+
+			</p:fieldset>
+
+			<p:separator />
+
+			<p:commandButton value="Salvar" action="#{treinoMbean.incluir}" update="messages" />
+
+		</h:form>
+
+	</ui:define>
+</ui:decorate>
+
+</html>

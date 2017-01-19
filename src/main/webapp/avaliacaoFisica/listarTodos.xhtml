@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:decorate template="/index.xhtml">
+	<ui:define name="centro">
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:dataTable var="avaliacaoFisica"
+				value="#{avaliacaoFisicaMbean.listaAvaliacaoFisicaVO}" rows="7"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} 
+                                                 {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="7,14,21" style="width:98%;">
+
+				<p:column headerText="Identificador">
+					<h:outputText value="#{avaliacaoFisica.id}" />
+				</p:column>
+
+				<p:column headerText="Identificador">
+					<h:outputText value="#{avaliacaoFisica.id}" />
+				</p:column>
+
+				<p:column headerText="Data">
+					<h:outputText value="#{avaliacaoFisica.dataavaliacao}" />
+				</p:column>
+
+				<p:column headerText="Altura">
+					<h:outputText value="#{avaliacaoFisica.altura}" />
+				</p:column>
+
+				<p:column headerText="Peso">
+					<h:outputText value="#{avaliacaoFisica.peso}" />
+				</p:column>
+
+				<p:column headerText="IMC">
+					<h:outputText value="#{avaliacaoFisica.imc}" />
+				</p:column>
+
+				<p:column headerText="Peito">
+					<h:outputText value="#{avaliacaoFisica.peito}" />
+				</p:column>
+
+				<p:column headerText="Braço Direito">
+					<h:outputText value="#{avaliacaoFisica.bracoDireito}" />
+				</p:column>
+
+				<p:column headerText="Braço Esquerdo">
+					<h:outputText value="#{avaliacaoFisica.bracoEsquerdo}" />
+				</p:column>
+
+				<p:column headerText="Cintura">
+					<h:outputText value="#{avaliacaoFisica.cintura}" />
+				</p:column>
+
+				<p:column headerText="Quadril">
+					<h:outputText value="#{avaliacaoFisica.quadril}" />
+				</p:column>
+
+
+				<p:column headerText="Coxa Direita">
+					<h:outputText value="#{avaliacaoFisica.coxaDireito}" />
+				</p:column>
+
+				<p:column headerText="Coxa Esquerda">
+					<h:outputText value="#{avaliacaoFisica.coxaEsquerdo}" />
+				</p:column>
+
+				<p:column headerText="Panturrilha Direita">
+					<h:outputText value="#{avaliacaoFisica.panturrilhaDireito}" />
+				</p:column>
+
+				<p:column headerText="Panturrilha Esquerda">
+					<h:outputText value="#{avaliacaoFisica.panturrilhaEsquerdo}" />
+				</p:column>
+
+				<p:column headerText="Ações">
+
+					<p:commandButton icon="ui-icon-trash" title="Excluir Registro"
+						ajax="true"
+						actionListener="#{avaliacaoFisicaMbean.excluir(avaliacaoFisica)}"
+						update="@form" />
+
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:decorate>
+</html>

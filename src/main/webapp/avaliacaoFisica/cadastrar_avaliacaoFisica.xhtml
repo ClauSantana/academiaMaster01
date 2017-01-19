@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:decorate template="/index.xhtml">
+
+	<ui:define name="centro">
+
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:fieldset legend="Cadastrar Avaliação Física"
+				style="margin-bottom:20px">
+
+				<p:panelGrid columns="2">
+
+					<p:outputLabel for="button" value="Data:" />
+					<p:calendar id="button" value="#{avaliacaoFisicaMbean.avaliacaoFisica.dataavaliacao}"
+						showOn="button" pattern="dd-MM-yyyy" mask="true"/>
+
+					<p:outputLabel value="Altura:"></p:outputLabel>
+					<p:inputText value="#{avaliacaoFisicaMbean.avaliacaoFisica.altura}" />
+
+					<p:outputLabel value="Peso:"></p:outputLabel>
+					<p:inputText value="#{avaliacaoFisicaMbean.avaliacaoFisica.peso}" />
+
+					<p:outputLabel value="Peito:"></p:outputLabel>
+					<p:inputText value="#{avaliacaoFisicaMbean.avaliacaoFisica.peito}" />
+
+					<p:outputLabel value="Braco Direito:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.bracoDireito}" />
+
+					<p:outputLabel value="Braco Esquerdo:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.bracoEsquerdo}" />
+
+					<p:outputLabel value="Cintura:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.cintura}" />
+
+					<p:outputLabel value="Quadril:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.quadril}" />
+
+					<p:outputLabel value="Coxa Direita:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.coxaDireito}" />
+
+					<p:outputLabel value="Coxa Esquerda:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.coxaEsquerdo}" />
+
+					<p:outputLabel value="Panturrilha Direita:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.panturrilhaDireito}" />
+
+					<p:outputLabel value="Panturrilha Esquerda:"></p:outputLabel>
+					<p:inputText
+						value="#{avaliacaoFisicaMbean.avaliacaoFisica.panturrilhaEsquerdo}" />
+
+				</p:panelGrid>
+
+			</p:fieldset>
+
+			<p:separator />
+
+			<p:commandButton value="Salvar"
+				action="#{avaliacaoFisicaMbean.incluir}" update="messages" />
+
+		</h:form>
+
+	</ui:define>
+</ui:decorate>
+
+</html>

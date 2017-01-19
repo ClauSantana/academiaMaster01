@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:decorate template="/index.xhtml">
+	<ui:define name="centro">
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:dataTable var="cliente"
+				value="#{clienteMbean.listaClienteVO}" rows="7"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} 
+                                                 {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="7,14,21" style="width:98%;">
+
+				<p:column headerText="Identificador">
+					<h:outputText value="#{cliente.id}" />
+				</p:column>
+
+				<p:column headerText="Data">
+					<h:outputText value="#{cliente.datacadastro}" />
+				</p:column>
+
+				<p:column headerText="Altura">
+					<h:outputText value="#{cliente.altura}" />
+				</p:column>
+
+				<p:column headerText="Peso">
+					<h:outputText value="#{cliente.peso}" />
+				</p:column>
+
+				<p:column headerText="Desenvolvimento">
+					<h:outputText value="#{cliente.desenvolvimento}" />
+				</p:column>
+
+				<p:column headerText="Ações">
+
+					<p:commandButton icon="ui-icon-trash" title="Excluir Registro"
+						ajax="true"
+						actionListener="#{clienteMbean.excluir(cliente)}"
+						update="@form" />
+
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:decorate>
+</html>

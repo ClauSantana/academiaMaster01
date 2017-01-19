@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:decorate template="/index.xhtml">
+
+	<ui:define name="centro">
+
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:fieldset legend="Cadastrar Usuário" style="margin-bottom:20px">
+
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Nickname:"></p:outputLabel>
+					<p:inputText value="#{usuarioMbean.usuario.nickname}" />
+
+
+					<p:outputLabel for="pwd1" value="Senha:" />
+					<p:password id="pwd1" value="#{usuarioMbean.usuario.senha}"
+						match="pwd2" label="Password 1" required="true" />
+
+					<p:outputLabel for="pwd2" value="Confirmação de Senha:" />
+					<p:password id="pwd2" value="#{usuarioMbean.usuario.senha}"
+						label="Password 2" required="true" />
+						
+				</p:panelGrid>
+
+			</p:fieldset>
+
+			<p:separator />
+
+			<p:commandButton value="Salvar" action="#{usuarioMbean.incluir}" update="messages" />
+
+		</h:form>
+
+	</ui:define>
+</ui:decorate>
+
+</html>
