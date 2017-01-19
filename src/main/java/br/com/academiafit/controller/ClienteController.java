@@ -19,7 +19,7 @@ import br.com.academiafit.vo.UsuarioVO;
 public class ClienteController extends AbstractController {
 	
 	public static String TELA_LISTAR_TODOS = "/cliente/listarTodos.xhtml";
-	public static String TELA_CADASTRAR = "/cliente/cadastrar_usuario.xhtml";
+	public static String TELA_CADASTRAR = "/cliente/cadastrar_cliente.xhtml";
 	
 	@Autowired
 	private ClienteService clienteService;
@@ -62,15 +62,16 @@ public class ClienteController extends AbstractController {
 	}
 	
 	public String incluir() throws BusinessException{
-		try{
-			clienteService.incluir(cliente);
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null," Cliente incluido com sucesso!"));
+		clienteService.incluir(cliente);
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null," Cliente incluido com sucesso!"));
+		
+/*		try{
 
 		}catch (BusinessException exception){
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null,exception.getMessage()));
 		}		
 
-		this.limparCampos();
+		this.limparCampos();*/
 		
 		return "";
 	}

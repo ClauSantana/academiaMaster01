@@ -12,34 +12,33 @@
 			<p:messages id="messages" showDetail="true" autoUpdate="true"
 				closable="true" />
 
-			<p:fieldset legend="Cadastrar Funcionario" style="margin-bottom:20px">
+			<p:fieldset legend="Cadastrar Professor" style="margin-bottom:20px">
 
 				<p:panelGrid columns="2">
-
 					<p:outputLabel value="Nome:"></p:outputLabel>
-					<p:inputText value="#{funcionarioMbean.funcionario.nome}" />
+					<p:inputText value="#{professorMbean.professor.nome}" />
 
 					<p:outputLabel value="CPF:"></p:outputLabel>
-					<p:inputMask value="#{funcionarioMbean.funcionario.cpf}"
+					<p:inputMask value="#{professorMbean.professor.cpf}"
 						mask="999.999.999-99" />
 
 					<p:outputLabel for="button" value="Data de Nascimento:" />
 					<p:calendar id="button"
-						value="#{funcionarioMbean.funcionario.dtnascimento}"
+						value="#{professorMbean.professor.dtnascimento}"
 						showOn="button" pattern="dd-MM-yyyy" mask="true" />
 
 					<p:outputLabel value="Logradouro:"></p:outputLabel>
-					<p:inputText value="#{funcionarioMbean.funcionario.end}" />
+					<p:inputText value="#{professorMbean.professor.end}" />
 
 					<p:outputLabel value="Bairro:"></p:outputLabel>
-					<p:inputText value="#{funcionarioMbean.funcionario.bairro}" />
+					<p:inputText value="#{professorMbean.professor.bairro}" />
 
 					<p:outputLabel value="Cidade:"></p:outputLabel>
-					<p:inputText value="#{funcionarioMbean.funcionario.cidade}" />
+					<p:inputText value="#{professorMbean.professor.cidade}" />
 
 					<p:outputLabel for="consoleEstado" value="Estado:" />
 					<p:selectOneMenu id="consoleEstado"
-						value="#{funcionarioMbean.funcionario.estado}" style="width:125px">
+						value="#{professorMbean.professor.estado}" style="width:125px">
 						<f:selectItem itemLabel="AC" itemValue="AC" />
 						<f:selectItem itemLabel="AL" itemValue="AL" />
 						<f:selectItem itemLabel="AP" itemValue="AP" />
@@ -70,37 +69,44 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Telefone:"></p:outputLabel>
-					<p:inputText value="#{funcionarioMbean.funcionario.fone}"
+					<p:inputText value="#{professorMbean.professor.fone}"
 						mask="(99)99999-9999" />
 
 					<p:outputLabel for="consoleSexo" value="Sexo:" />
 					<p:selectOneMenu id="consoleSexo"
-						value="#{funcionarioMbean.funcionario.sexo}" style="width:125px">
+						value="#{professorMbean.professor.sexo}" style="width:125px">
 						<f:selectItem itemLabel="Feminino" itemValue="F" />
 						<f:selectItem itemLabel="Masculino" itemValue="M" />
 					</p:selectOneMenu>
 
 					<p:outputLabel for="button1" value="Data de Contrato:" />
 					<p:calendar id="button1"
-						value="#{funcionarioMbean.funcionario.datacontrato}"
+						value="#{professorMbean.professor.datacontrato}"
 						showOn="button" pattern="dd-MM-yyyy" mask="true" />
 
 					<p:outputLabel for="consoleEscolaridade" value="Escolaridade:" />
 					<p:selectOneMenu id="consoleEscolaridade"
-						value="#{funcionarioMbean.funcionario.escolaridade}"
+						value="#{professorMbean.professor.escolaridade}"
 						style="width:125px">
 						<f:selectItem itemLabel="Primeiro Grau" itemValue="Primeiro Grau" />
 						<f:selectItem itemLabel="Segundo Grau" itemValue="Segundo Grau" />
 						<f:selectItem itemLabel="Superior" itemValue="Superior" />
 					</p:selectOneMenu>
+					
+					<p:outputLabel for="consoleHorario" value="Horário:"></p:outputLabel>
+					<p:selectOneMenu id="consoleHorario" value="#{professorMbean.professor.horario}"
+						style="width:125px">
+						<f:selectItem itemLabel="Manhã" itemValue="Manhã" />
+						<f:selectItem itemLabel="Tarde" itemValue="Tarde" />
+						<f:selectItem itemLabel="Noite" itemValue="Noite" />
+					</p:selectOneMenu>
+										
 				</p:panelGrid>
-
 			</p:fieldset>
 
 			<p:separator />
 
-			<p:commandButton value="Salvar" action="#{funcionarioMbean.incluir}"
-				update="messages" />
+			<p:commandButton value="Salvar" action="#{professorMbean.incluir}" update="messages" />
 
 		</h:form>
 

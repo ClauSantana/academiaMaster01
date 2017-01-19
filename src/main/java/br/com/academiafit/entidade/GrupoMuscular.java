@@ -19,8 +19,8 @@ public class GrupoMuscular {
 	@Column(name="MUSCULO")
 	private String musculo;
 	
-	@Column(name="EXERCICIOS")
-	private String exercicios;
+	@Column(name="EXERCICIO")
+	private String exercicio;
 
 	public long getId() {
 		return id;
@@ -38,11 +38,11 @@ public class GrupoMuscular {
 		this.musculo = musculo;
 	}
 
-	public String getExercicios() {
-		return exercicios;
+	public String getExercicio() {
+		return exercicio;
 	}
 
-	public void setExercicios(String exercicios) {
-		this.exercicios = exercicios;
+	public void setExercicio(String exercicio) {
+		this.exercicio = exercicio;
 	}
 }

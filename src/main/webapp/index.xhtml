@@ -13,16 +13,58 @@
 </h:head>
 <h:body>
 	<p:layout fullPage="true">
-
 		<p:layoutUnit position="west" size="250">
-
 			<h:form>
 				<p:panelMenu>
+
+					<p:submenu label="Cliente">
+						<p:menuitem value="Cadastrar"
+							action="#{clienteMbean.chamarTelaCadastro}" icon="ui-icon-disk" />
+						<p:menuitem value="Listar Todos"
+							action="#{clienteMbean.chamarTelaListarTodos}"
+							icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+
+					<p:submenu label="Funcionario">
+						<p:menuitem value="Cadastrar"
+							action="#{funcionarioMbean.chamarTelaCadastro}"
+							icon="ui-icon-disk" />
+						<p:menuitem value="Listar Todos"
+							action="#{funcionarioMbean.chamarTelaListarTodos}"
+							icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+
+					<p:submenu label="Professor">
+						<p:menuitem value="Cadastrar"
+							action="#{professorMbean.chamarTelaCadastro}" icon="ui-icon-disk" />
+						<p:menuitem value="Listar Todos"
+							action="#{professorMbean.chamarTelaListarTodos}"
+							icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+
 					<p:submenu label="Usuário">
 						<p:menuitem value="Cadastrar"
 							action="#{usuarioMbean.chamarTelaCadastro}" icon="ui-icon-disk" />
 						<p:menuitem value="Listar Todos"
 							action="#{usuarioMbean.chamarTelaListarTodos}"
+							icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+
+					<p:submenu label="Grupo Muscular">
+						<p:menuitem value="Cadastrar"
+							action="#{grupomuscularMbean.chamarTelaCadastro}"
+							icon="ui-icon-disk" />
+						<p:menuitem value="Listar Todos"
+							action="#{grupomuscularMbean.chamarTelaListarTodos}"
+							icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+
+					<p:submenu label="Maquinário">
+						<p:menuitem value="Cadastrar"
+							action="#{maquinarioMbean.chamarTelaCadastro}"
+							icon="ui-icon-disk" />
+						<p:menuitem value="Listar Todos"
+							action="#{maquinarioMbean.chamarTelaListarTodos}"
 							icon="ui-icon-arrowrefresh-1-w" />
 					</p:submenu>
 
@@ -40,22 +82,6 @@
 							icon="ui-icon-disk" />
 						<p:menuitem value="Listar Todos"
 							action="#{avaliacaoFisicaMbean.chamarTelaListarTodos}"
-							icon="ui-icon-arrowrefresh-1-w" />
-					</p:submenu>
-					<p:submenu label="Cliente">
-						<p:menuitem value="Cadastrar"
-							action="#{clienteMbean.chamarTelaCadastro}" icon="ui-icon-disk" />
-						<p:menuitem value="Listar Todos"
-							action="#{clienteMbean.chamarTelaListarTodos}"
-							icon="ui-icon-arrowrefresh-1-w" />
-					</p:submenu>
-
-					<p:submenu label="Funcionario">
-						<p:menuitem value="Cadastrar"
-							action="#{funcionarioMbean.chamarTelaCadastro}"
-							icon="ui-icon-disk" />
-						<p:menuitem value="Listar Todos"
-							action="#{funcionarioMbean.chamarTelaListarTodos}"
 							icon="ui-icon-arrowrefresh-1-w" />
 					</p:submenu>
 				</p:panelMenu>

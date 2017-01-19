@@ -15,10 +15,9 @@
 			<p:fieldset legend="Cadastrar Treino" style="margin-bottom:20px">
 
 				<p:panelGrid columns="2">
-				
 					<p:outputLabel for="console" value="Dia da semana:" />
-					<p:selectOneMenu id="console" value="#{treinoMbean.treino.diasemana}"
-						style="width:125px">
+					<p:selectOneMenu id="console"
+						value="#{treinoMbean.treino.diasemana}" style="width:125px">
 						<f:selectItem itemLabel="Segunda" itemValue="Segunda" />
 						<f:selectItem itemLabel="Terça" itemValue="Terça" />
 						<f:selectItem itemLabel="Quarta" itemValue="Quarta" />
@@ -26,20 +25,21 @@
 						<f:selectItem itemLabel="Sexta" itemValue="Sexta" />
 						<f:selectItem itemLabel="Sábado" itemValue="Sábado" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Séries:"></p:outputLabel>
-					<p:inputText value="#{treinoMbean.treino.series}"/>
-					
+					<p:inputText value="#{treinoMbean.treino.series}" />
+
 					<p:outputLabel value="Número de Repetições:"></p:outputLabel>
-					<p:inputText value="#{treinoMbean.treino.repeticoes}"/>
-						
+					<p:inputText value="#{treinoMbean.treino.repeticoes}" />
+
 				</p:panelGrid>
 
 			</p:fieldset>
 
 			<p:separator />
 
-			<p:commandButton value="Salvar" action="#{treinoMbean.incluir}" update="messages" />
+			<p:commandButton value="Salvar" action="#{treinoMbean.incluir}"
+				update="messages" />
 
 		</h:form>
 

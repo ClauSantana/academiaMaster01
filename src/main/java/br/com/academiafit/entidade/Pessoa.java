@@ -28,25 +28,25 @@ public class Pessoa {
 	private String nome;
 	
 	@Temporal(TemporalType.DATE)
-	@Column (columnDefinition = "DATADENASCIMENTO", length=10)
+	@Column (name= "DATADENASCIMENTO", length=10)
 	private Date dtnascimento; 
 
-	@Column (columnDefinition = "ENDERECO", length=50)
+	@Column (name= "ENDERECO", length=50)
 	private String end;
 
-	@Column (columnDefinition="BAIRRO", length=50)
+	@Column (name="BAIRRO", length=50)
 	private String bairro;
 
-	@Column (columnDefinition = "CIDADE", length=50)
+	@Column (name = "CIDADE", length=50)
 	private String cidade;
 
-	@Column (columnDefinition= "ESTADO", length=50)
+	@Column (name= "ESTADO", length=50)
 	private String estado;
 
-	@Column (columnDefinition= "TELEFONE", length=50)
+	@Column (name= "TELEFONE", length=50)
 	private String fone;
 
-	@Column (columnDefinition= "SEXO", length=1)
+	@Column (name= "SEXO", length=1)
 	private char sexo;
 
 	public long getId() {

@@ -12,7 +12,7 @@ public class ConverterGrupoMuscular {
 		GrupoMuscular grupomuscular = new GrupoMuscular();
 		grupomuscular.setId(grupomuscularVO.getId());
 		grupomuscular.setMusculo(grupomuscularVO.getMusculo());
-		grupomuscular.setExercicios(grupomuscular.getExercicios());
+		grupomuscular.setExercicio(grupomuscular.getExercicio());
 			
 		return grupomuscular;
 	}
@@ -21,7 +21,7 @@ public class ConverterGrupoMuscular {
 		GrupoMuscularVO grupomuscularVO = new GrupoMuscularVO();
 		grupomuscularVO.setId(grupomuscular.getId());
 		grupomuscularVO.setMusculo(grupomuscular.getMusculo());
-		grupomuscularVO.setExercicio(grupomuscular.getExercicios());
+		grupomuscularVO.setExercicio(grupomuscular.getExercicio());
 		
 		return grupomuscularVO; 		
 	}
